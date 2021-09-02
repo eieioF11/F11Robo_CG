@@ -11,8 +11,8 @@ DWAPlannerROS:
   max_vel_trans:  0.22      #ロボットの最大並進速度の絶対値（m / s）
   min_vel_trans:  0.11      #ロボットの最小並進速度の絶対値（m / s）
 
-  max_vel_theta: 2.75
-  min_vel_theta: 0.10 #1.37
+  max_vel_theta: 2.75 #最大旋回速度(rad/s)
+  min_vel_theta: 0.10 #1.37 #最小旋回速度(rad/s)
 
 #ロボットの加速限界
   acc_lim_x: 2.5
