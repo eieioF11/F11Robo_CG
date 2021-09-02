@@ -1,0 +1,17 @@
+<launch>
+	<!-- Arguments -->
+	<arg name="map_file" default="$(find F11Robo_CG)/map/map_world_CG.yaml"/>
+	<arg name="open_rviz" default="true"/>
+
+	<!-- odom -->
+	<include file="$(find F11Robo_CG)/launch/odom_gazebo.launch">
+		<arg name="map_file" value="$(arg map_file)" />
+		<arg name="open_rviz" default="$(arg open_rviz)"/>
+	</include>
+
+	<!-- Path Planner-->
+	<node pkg="F11Robo" type="PathPlanner.py" name="PathPlanner" output="screen"/>
+
+	<!-- Path Follower -->
+	<node pkg="F11Robo" type="PurePursuit.py" name="PurePursuit" output="screen"/>
+</launch>
